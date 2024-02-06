@@ -33,6 +33,7 @@ class games(enum.Enum):
     Vanguard = 'vg'
     Warzone = 'wz'
     Warzone2 = 'wz2'
+    ModernWarfare3 = 'mw3'
 
 
 class friendActions(enum.Enum):
@@ -60,6 +61,7 @@ class API:
         self.ModernWarfare = self.__MW()
         self.Warzone2 = self.__WZ2()
         self.ModernWarfare2 = self.__MW2()
+        self.ModernWarfare3 = self.__MW3()
         self.ColdWar = self.__CW()
         self.Vanguard = self.__VG()
         self.Shop = self.__SHOP()
@@ -538,6 +540,23 @@ class API:
         @property
         def _game(self) -> str:
             return "mw2"
+
+        @property
+        def _type(self) -> str:
+            return "mp"
+
+    class __MW3(__GameDataCommons):
+        """
+        ModernWarfare 3 class: A class to get players modernwarfare 3 stats, modernwarfare 3 combat history, a player's modernwarfare 3 season loot, modernwarfare 3 map list and specific modernwarfare 3 match details
+            classCategory: game
+            gameId/gameTitle: mw
+            gameType: mp
+
+        """
+
+        @property
+        def _game(self) -> str:
+            return "mw3"
 
         @property
         def _type(self) -> str:
